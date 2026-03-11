@@ -116,7 +116,7 @@ These results are consistent with economic literature on crisis early warning sy
 
 ---
 
-# ⛰️ Challenges 
+## ⛰️ Challenges 
 
 Predicting economic crises presents several difficulties:
 
@@ -159,7 +159,7 @@ presentacion.pdf
 
 ---
 
-# My Contributions
+## My Contributions
 
 • XXX
 
