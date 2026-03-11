@@ -18,11 +18,14 @@ The ultimate goal of the model is to **identify potential crises early**, improv
 ## 📑 Table of Contents
 ---
 - [Description](#description)
-- [Project Features](#%EF%B8%8F-project-features)
+- [Research Questions]
+- [Methodology](#%EF%B8%8F-methodology)
+- [Results]
+- [Key Insights]
+- [Challenges]
 - [Repository Structure](#-repository-structure)
 - [Tech Stack](#-tech-stack)
-- [Getting Started](#%EF%B8%8F-getting-started)
-- [Results](#-results)
+- [My Contributions](#-results)
 - [Authors](#authors)
 
 ## Description
@@ -31,9 +34,16 @@ The objective of the project is to predict the probability that a country will e
 
 Since crises are rare events but have a major impact, the model was optimized to prioritize the detection of real crises, minimizing false negatives.
 
-## ⚙️ Project Features
+## ❓ Research Questions
 
-- **Dataset Construction**:
+• Which macroeconomic indicators are most associated with economic crises?
+• Can machine learning detect early warning signals of financial crises?
+• What trade-off exists between detecting crises and generating false alarms?
+
+## ⚙️ Methodology
+
+### 1. **Dataset Construction**
+ 
 A dataset was created using World Bank macroeconomic indicators, selected for their relevance in analyzing economic crises.
 
 The variables include indicators related to:
@@ -48,8 +58,9 @@ The variables include indicators related to:
 
 The **target variable** was obtained from the financial crisis database compiled by **Laeven & Valencia (IMF)**.
 
-- **Preprocessing and Feature Engineering**  
-The dataset went through several preparation stages:
+### 2. **Data Preparation**
+ 
+The dataset went through several preprocessing and feature engineering stages:
   - Variable selection and prioritization through correlation analysis and visualization
   - Conceptual grouping of economic indicators
   - Handling missing values
@@ -57,13 +68,64 @@ The dataset went through several preparation stages:
   - Removal of low-information variables
   - Exclusion of countries with insufficient data availability
 
-- **Modeling and Optimization**  
-Several **classification models** were trained to predict the occurrence of economic crises. Afterwards, a hyperparameter optimization process was carried out to improve model performance. Evaluation was performed using different metrics, with particular emphasis on the **Recall of the positive class (crisis)**. This is because in financial risk problems it is more important to **detect as many real crises as possible**, even if it means accepting some false positives.
+### 3. **Modeling**
 
-- **Implementation**  
-The final selected model was saved for future use using joblib, allowing it to be reused for future predictions or integrated into analytical systems.
+Several classification models were trained to predict the occurrence of economic crises. Since crisis are rare but high-impact events, the model was optimized to prioritize **recall of the crisis class** in order to detect as many real crises as possible. 
+
+### 4. **Model Optimization**
+
+Hyperparameter tuning was performed to improve model performance.
+
+Evaluation metrics included:
+
+- Precision
+- Recall
+- F1-score
+
+Special attention was given to recall for the crisis class.
+
+## 📊 Results
+
+The model was evaluated using precision, recall, and F1-score for both classes:
+- Class 0: No crisis
+- Class 1: Economic crisis
+
+Since the main goal of the project is to **detect as many real crises as possible**, the model prioritizes **maximizing recall for the positive class (crisis)**, even if this results in a higher number of false positives.
+
+This behavior is expected and desirable in risk prediction problems, where **failing to detect a crisis (false negative) is much more costly than generating a false alarm**.
+
+The final model therefore prioritizes:
+
+✔ High sensitivity to economic crises  
+✔ Early warning capability  
+⚠ At the cost of generating more crisis predictions that may not actually occur  
+
+This approach is common in **financial or economic early warning models**, where the primary objective is **not to overlook critical events**.
 
 ---
+
+## 🔑 Key Insights
+
+Some macroeconomic indicators appear to be strongly associated with crisis events, including:
+
+- external debt growth  
+- inflation instability  
+- financial sector stress indicators  
+
+These results are consistent with economic literature on crisis early warning systems.
+
+---
+
+# ⛰️ Challenges 
+
+Predicting economic crises presents several difficulties:
+
+• Crises are rare events (class imbalance)  
+• Macroeconomic indicators are often delayed  
+• Countries have structural economic differences  
+
+These factors limit the predictive power of purely data-driven models.
+
 ## 📂 Repository Structure
 ```
 src/  
@@ -86,41 +148,20 @@ README.md
 main.ipynb
 presentacion.pdf
 ```
+
+---
+
 ## 🛠 Tech Stack
 
 **Languages:**: `python`
 
 **Main libraries**: `numpy, pandas, scikit-learn, matplotlib, seaborn, (incluir modelos)`
 
-## ▶️ Getting Started
+---
 
-1. Clone the repository
-```
-git clone https://github.com/SandraGM1/ML_Crisis_Prediction.git
-```
-2. Run the main notebook
-```
-main.ipynb
-```
-This notebook allows you to reproduce the complete project pipeline.
+# My Contributions
 
-## 📊 Results
-
-The model was evaluated using precision, recall, and F1-score for both classes:
-- Class 0: No crisis
-- Class 1: Economic crisis
-
-Since the main goal of the project is to **detect as many real crises as possible**, the model prioritizes **maximizing recall for the positive class (crisis)**, even if this results in a higher number of false positives.
-
-This behavior is expected and desirable in risk prediction problems, where **failing to detect a crisis (false negative) is much more costly than generating a false alarm**.
-
-The final model therefore prioritizes:
-
-✔ High sensitivity to economic crises  
-✔ Early warning capability  
-⚠ At the cost of generating more crisis predictions that may not actually occur  
-
-This approach is common in **financial or economic early warning models**, where the primary objective is **not to overlook critical events**.
+• XXX
 
 ## Authors
 
