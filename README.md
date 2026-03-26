@@ -36,9 +36,9 @@ Since crises are rare events but have a major impact, the model was optimized to
 
 ## ❓ Research Questions
 
-• Which macroeconomic indicators are most associated with economic crises?
-• Can machine learning detect early warning signals of financial crises?
-• What trade-off exists between detecting crises and generating false alarms?
+• Which macroeconomic indicators are most associated with economic crises?  
+• Can machine learning detect early warning signals of financial crises?  
+• What trade-off exists between detecting crises and generating false alarms?  
 
 ## ⚙️ Methodology
 
@@ -70,7 +70,15 @@ The dataset went through several preprocessing and feature engineering stages:
 
 ### 3. **Modeling**
 
-Several classification models were trained to predict the occurrence of economic crises. Since crisis are rare but high-impact events, the model was optimized to prioritize **recall of the crisis class** in order to detect as many real crises as possible. 
+Several baseline classification models were trained to predict the occurrence of economic crises and compared:
+
+- Logistic Regression
+- Random Forest
+- XGB Classifier
+- LGBM Classifier
+- Cat Boost Classifier
+
+These models were evaluated using cross-validation to ensure robustness. Since crisis are rare but high-impact events, the model was optimized to prioritize **recall of the crisis class** in order to detect as many real crises as possible. 
 
 ### 4. **Model Optimization**
 
@@ -101,6 +109,10 @@ The final model therefore prioritizes:
 ⚠ At the cost of generating more crisis predictions that may not actually occur  
 
 This approach is common in **financial or economic early warning models**, where the primary objective is **not to overlook critical events**.
+
+The Extreme Gradient Boosting model achieved the best performance, balancing sensitivity to crisis events with acceptable false positive rates.
+
+![ROC Curve](src/img/curva_ROC_XGBoost.png)
 
 ---
 
