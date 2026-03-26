@@ -1,8 +1,3 @@
-This project is based on a group project developed during a data science bootcamp.
-
-This repository contains my own extended and improved version of the analysis.
-
----
 # 🌍 World Crisis Predictor
 
 In an era marked by multiple crises and uncertainty, historical country data can provide valuable insights for anticipating potential future crises.
@@ -13,16 +8,24 @@ The data used in this project come primarily from **macroeconomic indicators pro
 
 The ultimate goal of the model is to **identify potential crises early**, improving the capacity for analysis and anticipation of adverse economic events.
 
+## 🚀 Project Highlights
+
+• Built a supervised machine learning model to predict financial crises  
+• Combined World Bank macroeconomic indicators with IMF crisis data  
+• Addressed class imbalance typical of rare crisis events  
+• Optimized models to maximize recall for crisis detection  
+• Identified key macroeconomic predictors of crisis risk
+
 <hr style="height:6px;border:none;color:#333;background-color:#333;">
 
 ## 📑 Table of Contents
 ---
 - [Description](#description)
-- [Research Questions]
+- [Research Questions](#-research-questions)
 - [Methodology](#%EF%B8%8F-methodology)
-- [Results]
-- [Key Insights]
-- [Challenges]
+- [Results](#-results)
+- [Key Insights](#-key-insights)
+- [Challenges](#%EF%B8%8F-challenges)
 - [Repository Structure](#-repository-structure)
 - [Tech Stack](#-tech-stack)
 - [My Contributions](#-results)
@@ -102,6 +105,10 @@ Since the main goal of the project is to **detect as many real crises as possibl
 
 This behavior is expected and desirable in risk prediction problems, where **failing to detect a crisis (false negative) is much more costly than generating a false alarm**.
 
+The Extreme Gradient Boosting model achieved the best performance (recall = 0.84, ROC-AUC = 0.797), balancing sensitivity to crisis events with acceptable false positive rates.
+
+<img width="691" height="547" alt="curva_ROC_XGBoost" src="https://github.com/user-attachments/assets/10660120-e083-430c-9104-e0d670451b94" />
+
 The final model therefore prioritizes:
 
 ✔ High sensitivity to economic crises  
@@ -109,10 +116,6 @@ The final model therefore prioritizes:
 ⚠ At the cost of generating more crisis predictions that may not actually occur  
 
 This approach is common in **financial or economic early warning models**, where the primary objective is **not to overlook critical events**.
-
-The Extreme Gradient Boosting model achieved the best performance, balancing sensitivity to crisis events with acceptable false positive rates.
-
-![ROC Curve](src/img/curva_ROC_XGBoost.png)
 
 ---
 
@@ -124,7 +127,7 @@ Some macroeconomic indicators appear to be strongly associated with crisis event
 - inflation instability  
 - financial sector stress indicators  
 
-These results are consistent with economic literature on crisis early warning systems.
+Countries experiencing rapid credit expansion were significantly more likely to enter crisis periods in subsequent years. These results are consistent with economic literature on crisis early warning systems. 
 
 ---
 
@@ -172,8 +175,7 @@ presentacion.pdf
 ---
 
 ## My Contributions
-
-• Data preprocessing and feature engineering  
+ 
 • Exploratory data analysis  
 • Training and evaluation of classification models  
 
@@ -182,10 +184,3 @@ presentacion.pdf
 Francisco de las Cuevas  
 Sandra García Moreno   
 Sergi de la Cruz Núñez 
-
-<hr style="height:6px;border:none;color:#333;background-color:#333;">
-<hr style="height:6px;border:none;color:#333;background-color:#333;">
-
-# 🌍 **Predictor de Crisis Mundial**
-
-
